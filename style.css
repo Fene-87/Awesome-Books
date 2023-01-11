@@ -1,0 +1,36 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10rem;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-input {
+  width: 30rem;
+  margin-top: 1rem;
+  height: 20px;
+  border: 1px solid #d3d3d3;
+  outline: none;
+  padding: 10px;
+}
+
+.hide-label {
+  display: none;
+}
+
+.add-book {
+  margin-top: 1rem;
+  width: 8rem;
+  padding: 10px;
+}
