@@ -46,14 +46,26 @@ class UI {
   static addBookToList(book) {
     const list = document.querySelector('.displayed-books');
     const row = document.createElement('div');
+    row.classList.add('display-row')
 
     row.innerHTML = `
-        <p>${book.title}</p>
-        <p>${book.author}</p>
+        <div class="all-books">
+          <p>${book.title}</p>
+          <p>&nbsp;by ${book.author}</p>
+        </div>
         <button type="button" class="delete">remove</button>
     `;
 
     list.appendChild(row);
+    const allChildren = document.querySelectorAll('.display-row')
+    allChildren.forEach((element, index) => {
+      console.log(element.innerHTML)
+      if(index % 2 === 0) {
+        element.classList.add('background-color-one')
+      } else {
+        element.classList.add('background-color-two')
+      }
+    })
   }
 
   static deleteBook(el) {
@@ -86,7 +98,9 @@ document.querySelector('.add-form').addEventListener('submit', (e) => {
 
 document.querySelector('.displayed-books').addEventListener('click', (e) => {
   UI.deleteBook(e.target);
-  const bookToRemove = e.target.previousElementSibling.previousElementSibling.textContent;
+  const bookToRemove = e.target.previousElementSibling.firstElementChild.textContent;
 
+  console.log(e.target.previousElementSibling.firstElementChild.textContent);
   Store.deleteBook(bookToRemove);
+  
 });
