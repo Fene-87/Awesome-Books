@@ -135,8 +135,8 @@ navLinks.forEach((link, index) => {
   if(index === 0) {
     link.addEventListener('click', () => {
       link.classList.add('link-color');
-      link[1].classList.remove('link-color');
-      link[2].classList.remove('link-color');
+      navLinks[1].classList.remove('link-color');
+      navLinks[2].classList.remove('link-color');
       firstSection.classList.remove('hide-section');
       secondSection.classList.add('hide-section');
       thirdSection.classList.add('hide-section');
