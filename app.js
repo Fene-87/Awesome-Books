@@ -59,7 +59,6 @@ class UI {
     list.appendChild(row);
     const allChildren = document.querySelectorAll('.display-row')
     allChildren.forEach((element, index) => {
-      console.log(element.innerHTML)
       if(index % 2 === 0) {
         element.classList.add('background-color-one')
       } else {
@@ -100,7 +99,6 @@ document.querySelector('.displayed-books').addEventListener('click', (e) => {
   UI.deleteBook(e.target);
   const bookToRemove = e.target.previousElementSibling.firstElementChild.textContent;
 
-  console.log(e.target.previousElementSibling.firstElementChild.textContent);
   Store.deleteBook(bookToRemove);
   
 });
