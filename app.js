@@ -102,3 +102,62 @@ document.querySelector('.displayed-books').addEventListener('click', (e) => {
   Store.deleteBook(bookToRemove);
   
 });
+
+const currentDate = document.querySelector('.current-date');
+
+const updateClock = () => {
+  let today = new Date();
+  let month = today.getMonth();
+  let year = today.getFullYear();
+  let date = today.getDate();
+  let hours = today.getHours();
+  let minutes = today.getMinutes();
+  let seconds = today.getSeconds();
+  const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+  currentDate.innerHTML = `
+    <p>${months[month]} ${date}th ${year},  ${hours}:${minutes}:${seconds}</p>
+  `;
+}
+
+const initClock = () => {
+  updateClock();
+  window.setInterval('updateClock()', 1);
+}
+
+document.addEventListener('DOMContentLoaded', initClock);
+
+const navLinks = document.querySelectorAll('.item');
+const firstSection = document.querySelector('.first-section');
+const secondSection = document.querySelector('.second-section');
+const thirdSection = document.querySelector('.third-section');
+
+navLinks.forEach((link, index) => {
+  if(index === 0) {
+    link.addEventListener('click', () => {
+      link.classList.add('link-color');
+      navLinks[1].classList.remove('link-color');
+      navLinks[2].classList.remove('link-color');
+      firstSection.classList.remove('hide-section');
+      secondSection.classList.add('hide-section');
+      thirdSection.classList.add('hide-section');
+    })
+  } else if (index === 1) {
+    link.addEventListener('click', () => {
+      link.classList.add('link-color');
+      navLinks[0].classList.remove('link-color');
+      navLinks[2].classList.remove('link-color');
+      firstSection.classList.add('hide-section');
+      secondSection.classList.remove('hide-section');
+      thirdSection.classList.add('hide-section');
+    })
+  } else {
+    link.addEventListener('click', () => {
+      link.classList.add('link-color');
+      navLinks[0].classList.remove('link-color');
+      navLinks[1].classList.remove('link-color');
+      firstSection.classList.add('hide-section');
+      secondSection.classList.add('hide-section');
+      thirdSection.classList.remove('hide-section');
+    })
+  }
+})
