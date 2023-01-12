@@ -11,13 +11,58 @@ main {
   margin-top: 10rem;
 }
 
+.page-header {
+  font-family: 'lato', sans-serif;
+}
+
+.displayed-books {
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  margin-top: 1rem;
+  padding: 10px 0;
+}
+
+.display-row {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  width: 30rem;
+  padding: 10px;
+  justify-content: space-between;
+}
+
+.background-color-one {
+  background-color: #fff;
+}
+
+.background-color-two {
+  background-color: #d3d3d3;
+}
+
+.all-books {
+  display: flex;
+  flex-direction: row;
+}
+
+.line-break {
+  width: 10rem;
+  border: 1px solid #272a31;
+  margin-top: 2rem;
+}
+
+.form-header {
+  font-family: 'lato', sans-serif;
+  margin-top: 1.5rem;
+}
+
 form {
   display: flex;
   flex-direction: column;
 }
 
 .form-input {
-  width: 30rem;
+  width: 20rem;
   margin-top: 1rem;
   height: 20px;
   border: 1px solid #d3d3d3;
@@ -33,4 +78,5 @@ form {
   margin-top: 1rem;
   width: 8rem;
   padding: 10px;
+  align-self: flex-end;
 }
